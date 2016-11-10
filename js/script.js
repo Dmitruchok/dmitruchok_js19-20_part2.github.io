@@ -276,7 +276,6 @@
 ];
 
 
-
 const data = JSON.parse(JSON.stringify( infomation));
 
 //Skills all people
