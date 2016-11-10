@@ -1,6 +1,5 @@
 'use strict;'
-$(function () {
-  var $infomation = [
+  let infomation = [
   {
     "guid": "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
     "index": 0,
@@ -278,11 +277,12 @@ $(function () {
 
 
 
-var $i = JSON.parse(JSON.stringify($infomation));
-//console.log($i[0].skills);
+let i = JSON.parse(JSON.stringify( infomation));
 
-_.map($i, (skills) => {
+let skills = _.flatten(_.map( i, 'skills')).sort();
+ let uniqSkills = _.uniq(skills, false);
+console.log(skills);
+
+/*_.map(i, (skills) => {
   console.log(skills);
-})
-
-});
+})*/
