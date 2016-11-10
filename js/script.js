@@ -281,9 +281,16 @@ const data = JSON.parse(JSON.stringify( infomation));
 
 //Skills all people
 const skills = _.flatten(_.map( data, 'skills')).sort(),
-    uniqSkills = _.uniq(skills, false);
+      uniqSkills = _.uniq(skills, false);
 console.log('Skills all people - ', uniqSkills);
 
 //Amount friends
-const friendsPeople = _.map(data.sort(( a,b ) => {return b.friends.length - a.friends.length;}), 'name');
-console.log('Amount friends - ', friendsPeople);
+const amountPeople = _.map(data.sort(( a,b ) => {return b.friends.length - a.friends.length;}), 'name');
+console.log('Amount friends - ', amountPeople);
+
+//All friends
+const allFriends =_.map(_.flatten( _.map(data, 'friends')), 'name');
+      uniqFriends = _.uniq(allFriends, false);
+
+//console.log('All Friends - ', allFriends);
+console.log('Uniq Friends   - ', uniqFriends);
