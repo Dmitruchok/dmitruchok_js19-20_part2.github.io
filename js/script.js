@@ -277,11 +277,11 @@
 
 
 
-let i = JSON.parse(JSON.stringify( infomation));
+let data = JSON.parse(JSON.stringify( infomation));
 
-let skills = _.flatten(_.map( i, 'skills')).sort();
- let uniqSkills = _.uniq(skills, false);
-console.log(skills);
+let skills = _.flatten(_.map( data, 'skills')).sort(),
+    uniqSkills = _.uniq(skills, false);
+console.log(uniqSkills);
 
 /*_.map(i, (skills) => {
   console.log(skills);
